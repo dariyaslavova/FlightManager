@@ -1,5 +1,5 @@
 # Flight Manager – ASP.NET MVC Project
-by Dariya Slavova
+- **by Dariya Slavova**
 
 Flight Manager is a complete airline management system built with ASP.NET Core MVC, Entity Framework Core, and SQL Server.  
 The project provides full functionality for managing flights, reservations, passengers, and user roles.

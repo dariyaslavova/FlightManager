@@ -1,0 +1,34 @@
+﻿@model FlightManager.Data.Models.Flight
+
+<h2>Нов полет</h2>
+
+<form method="post">
+    <label>От</label>
+    <input class="form-control" name="FromLocation" />
+
+    <label>До</label>
+    <input class="form-control" name="ToLocation" />
+
+    <label>Излитане</label>
+    <input class="form-control" type="datetime-local" name="DepartureTime" />
+
+    <label>Кацане</label>
+    <input class="form-control" type="datetime-local" name="ArrivalTime" />
+
+    <label>Тип самолет</label>
+    <input class="form-control" name="PlaneType" />
+
+    <label>Номер самолет</label>
+    <input class="form-control" name="PlaneNumber" />
+
+    <label>Пилот</label>
+    <input class="form-control" name="PilotName" />
+
+    <label>Икономични места</label>
+    <input class="form-control" type="number" name="CapacityEconomy" />
+
+    <label>Бизнес места</label>
+    <input class="form-control" type="number" name="CapacityBusiness" />
+
+    <button class="btn btn-success mt-3">Създай</button>
+</form>

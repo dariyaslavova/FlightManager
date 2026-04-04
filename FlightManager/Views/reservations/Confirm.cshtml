@@ -1,0 +1,17 @@
+﻿@model FlightManager.Data.Models.Reservation
+
+<h2>Резервацията е потвърдена!</h2>
+
+<p>Email: @Model.Email</p>
+<p>Полет: @Model.Flight.FromLocation → @Model.Flight.ToLocation</p>
+
+<h4>Пътници:</h4>
+
+<ul>
+@foreach (var p in Model.Passengers)
+{
+    <li>@p.FirstName @p.LastName (@p.TicketType)</li>
+}
+</ul>
+
+<a asp-action="Index" class="btn btn-primary">Към всички резервации</a>

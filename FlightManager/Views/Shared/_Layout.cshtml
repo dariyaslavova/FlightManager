@@ -48,3 +48,12 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<li><a asp-controller="Flight" asp-action="Index">Полетите</a></li>
+<li><a asp-controller="Reservation" asp-action="Index">Резервации</a></li>
+
+@if (Context.Session.GetString("Role") == "Admin")
+{
+    <li><a asp-controller="UserManagement" asp-action="Index">Потребители</a></li>
+}
+
+<li><a asp-controller="User" asp-action="Logout">Изход</a></li>

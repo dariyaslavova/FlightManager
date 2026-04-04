@@ -1,0 +1,20 @@
+﻿@model IEnumerable<FlightManager.Data.Models.User>
+
+<h2>Потребители</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Име</th>
+        <th>Имейл</th>
+        <th>Роля</th>
+    </tr>
+
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.FirstName @u.LastName</td>
+            <td>@u.Email</td>
+            <td>@u.Role</td>
+        </tr>
+    }
+</table>

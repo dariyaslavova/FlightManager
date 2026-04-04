@@ -1,0 +1,10 @@
+﻿@model FlightManager.Data.Models.Reservation
+
+<h2>Изтриване на резервация</h2>
+
+<p>Сигурни ли сте, че искате да изтриете резервацията за <strong>@Model.Email</strong>?</p>
+
+<form method="post">
+    <button class="btn btn-danger">Изтрий</button>
+    <a asp-action="Index" class="btn btn-secondary">Отказ</a>
+</form>

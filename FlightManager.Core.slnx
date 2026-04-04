@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="FlightManager.Data/FlightManager.Data.csproj" Id="d3017f16-66cf-49c5-bae6-0f8d32f07528" />
+  <Project Path="FlightManager.Services/FlightManager.Services.csproj" Id="831385be-8d07-4449-b611-1d0afaf6d1f2" />
+  <Project Path="FlightManager/FlightManager.Web.csproj" />
+</Solution>

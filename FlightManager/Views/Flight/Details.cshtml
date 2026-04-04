@@ -1,0 +1,20 @@
+﻿@model FlightManager.Data.Models.Flight
+
+<h2>Детайли за полет</h2>
+
+<p><strong>От:</strong> @Model.FromLocation</p>
+<p><strong>До:</strong> @Model.ToLocation</p>
+<p><strong>Излитане:</strong> @Model.DepartureTime</p>
+<p><strong>Кацане:</strong> @Model.ArrivalTime</p>
+<p><strong>Самолет:</strong> @Model.PlaneType</p>
+<p><strong>Номер:</strong> @Model.PlaneNumber</p>
+<p><strong>Пилот:</strong> @Model.PilotName</p>
+<p><strong>Икономични места:</strong> @Model.CapacityEconomy</p>
+<p><strong>Бизнес места:</strong> @Model.CapacityBusiness</p>
+
+<a class="btn btn-primary" href="/Flight/Index">Назад</a>
+@{
+    var duration = Model.ArrivalTime - Model.DepartureTime;
+}
+<p><strong>Продължителност:</strong> @duration</p>
+<p><strong>Продължителност:</strong> @duration</p>

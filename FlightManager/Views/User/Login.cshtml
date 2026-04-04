@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Вход</h2>
+
+<form method="post">
+    <label>Потребителско име</label>
+    <input type="text" name="username" class="form-control" />
+
+    <label>Парола</label>
+    <input type="password" name="password" class="form-control" />
+
+    <button type="submit" class="btn btn-primary mt-3">Вход</button>
+
+    <p style="color:red">@ViewBag.Error</p>
+</form>

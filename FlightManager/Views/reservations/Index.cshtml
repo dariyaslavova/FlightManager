@@ -1,0 +1,30 @@
+﻿@model IEnumerable<FlightManager.Data.Models.Reservation>
+
+<h2>Резервации</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Потвърдена</th>
+            <th>Полет</th>
+            <th>Пътници</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Email</td>
+                <td>@(r.IsConfirmed ? "Да" : "Не")</td>
+                <td>@r.Flight.FromLocation → @r.Flight.ToLocation</td>
+                <td>@r.Passengers.Count</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@r.Id">Детайли</a> |
+                    <a asp-action="Delete" asp-route-id="@r.Id">Изтриване</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

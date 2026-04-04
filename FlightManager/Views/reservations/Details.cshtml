@@ -1,0 +1,31 @@
+﻿@model FlightManager.Data.Models.Reservation
+
+<h2>Детайли за резервация</h2>
+
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Потвърдена:</strong> @(Model.IsConfirmed ? "Да" : "Не")</p>
+<p><strong>Полет:</strong> @Model.Flight.FromLocation → @Model.Flight.ToLocation</p>
+
+<h4>Пътници</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Име</th>
+            <th>ЕГН</th>
+            <th>Тип билет</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Passengers)
+        {
+            <tr>
+                <td>@p.FirstName @p.LastName</td>
+                <td>@p.EGN</td>
+                <td>@p.TicketType</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Назад</a>

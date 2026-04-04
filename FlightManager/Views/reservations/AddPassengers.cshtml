@@ -1,0 +1,63 @@
+﻿@model FlightManager.Data.Models.Reservation
+
+<h2>Добавяне на пътници</h2>
+
+<p><strong>Полет:</strong> @Model.Flight.FromLocation → @Model.Flight.ToLocation</p>
+
+<h4>Добави пътник</h4>
+
+<form method="post">
+    <input type="hidden" name="reservationId" value="@Model.Id" />
+
+    <label>Име</label>
+    <input name="FirstName" class="form-control" required />
+
+    <label>Презиме</label>
+    <input name="MiddleName" class="form-control" required />
+
+    <label>Фамилия</label>
+    <input name="LastName" class="form-control" required />
+
+    <label>ЕГН</label>
+    <input name="EGN" class="form-control" required />
+
+    <label>Телефон</label>
+    <input name="Phone" class="form-control" required />
+
+    <label>Националност</label>
+    <input name="Nationality" class="form-control" required />
+
+    <label>Тип билет</label>
+    <select name="TicketType" class="form-control">
+        <option>Business</option>
+        <option>Economy</option>
+    </select>
+
+    <button class="btn btn-success mt-3">Добави</button>
+</form>
+
+<hr />
+
+<h4>Текущи пътници</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Име</th>
+            <th>ЕГН</th>
+            <th>Тип билет</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Passengers)
+        {
+            <tr>
+                <td>@p.FirstName @p.LastName</td>
+                <td>@p.EGN</td>
+                <td>@p.TicketType</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-action="Confirm" asp-route-id="@Model.Id">Потвърди резервацията</a>

@@ -1,0 +1,14 @@
+﻿@{
+    var flight = ViewBag.Flight as FlightManager.Data.Models.Flight;
+}
+
+<h2>Нова резервация</h2>
+
+<p><strong>Полет:</strong> @flight.FromLocation → @flight.ToLocation</p>
+
+<form method="post">
+    <label>Email за потвърждение</label>
+    <input type="email" name="email" class="form-control" required />
+
+    <button class="btn btn-primary mt-3">Продължи</button>
+</form>

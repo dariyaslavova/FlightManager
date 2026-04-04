@@ -1,0 +1,63 @@
+﻿@model X.PagedList.IPagedList<FlightManager.Data.Models.Flight>
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+
+<h2>Полетите</h2>
+<form method="get" asp-action="Index">
+    <label>От:</label>
+    <input type="text" name="from" value="@Context.Request.Query["from"]" />
+
+    <label>До:</label>
+    <input type="text" name="to" value="value=" @Context.Request.Query["to"]" />
+
+    <button type="submit">Търси</button>
+</form>
+
+
+<h1>Flights</h1>
+
+<h2>Полетите</h2>
+
+<form method="get" class="mb-3">
+    <input type="text" name="from" placeholder="От" class="form-control mb-2" />
+    <input type="text" name="to" placeholder="До" class="form-control mb-2" />
+    <input type="date" name="date" class="form-control mb-2" />
+    <button class="btn btn-primary">Търси</button>
+</form>
+
+<a class="btn btn-success mb-3" href="/Flight/Create">+ Нов полет</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>От</th>
+        <th>До</th>
+        <th>Излитане</th>s
+        <th>Кацане</th>
+        <th>Самолет</th>
+        <th>Пилот</th>
+        <th></th>
+    </tr>
+
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td>@f.FromLocation</td>
+            <td>@f.ToLocation</td>
+            <td>@f.DepartureTime</td>
+            <td>@f.ArrivalTime</td>
+            <td>@f.PlaneType</td>
+            <td>@f.PilotName</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Flight/Details/@f.Id">Детайли</a>
+                <a class="btn btn-warning btn-sm" href="/Flight/Edit/@f.Id">Редакция</a>
+                <a class="btn btn-danger btn-sm" href="/Flight/Delete/@f.Id">Изтриване</a>
+            </td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new
+{
+    page,
+    from = Context.Request.Query["from"],
+    to = Context.Request.Query["to"]
+}))

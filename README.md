@@ -28,9 +28,9 @@ The project provides full functionality for managing flights, reservations, pass
 
 ### Reservation System
 - Multi-step reservation process:
-  . Select flight & enter email
-  . Add passengers
-  . Confirm reservation
+  - Select flight & enter email
+  - Add passengers
+  - Confirm reservation
 - Passenger management
 - Reservation overview and details
 
